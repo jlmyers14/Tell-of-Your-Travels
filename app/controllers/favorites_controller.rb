@@ -2,7 +2,7 @@ class FavoritesController < ApplicationController
 
     def create
         @like = current_user.likes.new(post_id: params[:post_id])
-        like = Like.create!
+        like = Favorites.create!
         render json: like, status: :created
     end
     
