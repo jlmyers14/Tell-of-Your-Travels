@@ -33,7 +33,7 @@ function Home() {
     <div className="Home">
       <Globe
         polygonsData={countries.features.filter((d) => d.properties)}
-        backgroundColor={"#FFFFFF"}
+        backgroundColor={"lightgoldenrodyellow"}
         globeImageUrl="//unpkg.com/three-globe/example/img/earth-dark.jpg"
         hexPolygonsData={countries.features.filter((d) => d.properties)}
         hexPolygonResolution={3}

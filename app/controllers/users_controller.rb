@@ -24,7 +24,7 @@ rescue_from ActiveRecord::RecordInvalid, with: :invalid
 
     private
     def user_params
-        params.permit(:username, :password, :profile_image)
+        params.permit(:username, :password)
     end
 
     def invalid

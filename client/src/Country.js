@@ -74,8 +74,9 @@ function Country({ country }) {
       </div>
       <div className="images-container">{renderImages}</div>
       <div className="filter-posts-buttons-container">
+        <br></br>
         <button className="filter-btn" onClick={() => filter === "experiences" ? setFilter("food") : setFilter("experiences")} name="experiences">
-          EXPERIENCES
+          TRAVEL REVIEWS
         </button>
       </div>
       <br></br>

@@ -42,7 +42,7 @@ class PostsController < ApplicationController
 
     private
     def post_params
-        params.permit(:user_id, :country_id, :country_code, :content, :category, :image, :city)
+        params.permit(:user_id, :country_id, :country_code, :content, :category, :city)
     end
 
 end

@@ -1,5 +1,3 @@
-29 lines (24 sloc)  685 Bytes
-
 class SessionsController < ApplicationController
     before_action :authorized, except: [:create]
 

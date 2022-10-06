@@ -20,7 +20,6 @@ function Account({ user, setUser }) {
 
   const history = useHistory();
 
-  // Get all of the posts
   useEffect(() => {
     fetch("/posts", {
       method: "GET",
@@ -83,8 +82,6 @@ function Account({ user, setUser }) {
     setForm({ ...form, [e.target.name]: e.target.value });
   }
 
-  // Update user profile
-
   function handleProfileSubmit(e) {
     e.preventDefault();
     fetch(`/update_profile?id=${user.id}`, {
@@ -131,10 +128,9 @@ function Account({ user, setUser }) {
     <div>
       <div className="post-form-container">
         <form onSubmit={handleSubmit}>
-          <h2 className="card-city-country">Create Post</h2>
-          <br></br>
-          <div className="input-login">
-            <label className="form-label">Country:</label>
+          <h2 className="card-city-country">Create Post:</h2>
+          <div className="input">
+            <label className="form">Country:</label>
             <br></br>
             <select onChange={handleChange} value={form.country_id} className="select-country" name="country_id">
               <option value="0">Select</option>
@@ -143,58 +139,50 @@ function Account({ user, setUser }) {
               ))}
             </select>
           </div>
-          <div className="input-login">
-            <label className="form-label">Highlights from your trip:</label>
+          <br></br>
+          <div className="input">
+            <label className="form">Travel Highlights:</label>
             <br></br>
             <input onChange={handleChange} value={form.content} name="content" />
           </div>
-          {/* <div className="input-login">
-            <label className="form-label">Image:</label>
-            <br></br>
-            <input onChange={handleChange} value={form.image} name="image" />
-          </div> */}
-          <div className="input-login">
-            <label className="form-label">Nearest city:</label>
+          <br></br>
+          <div className="input">
+            <label className="form">Favorite City Visited:</label>
             <br></br>
             <input onChange={handleChange} value={form.city} name="city" />
           </div>
-          <div className="input-login">
-            <label className="form-label">Category:</label>
+          <br></br>
+          <div className="input">
+            <label className="form">Category:</label>
             <br></br>
             <select onChange={handleChange} value={form.category} className="select-country" name="category">
               <option value="null">Select</option>
-              <option value="experiences">Experiences</option>
+              <option value="experiences">Travel Review</option>
             </select>
           </div>
-          <button className="login-btn" type="submit">
-            Post
-          </button>
+          <br></br>
+          <button className="login-btn" type="submit">Submit</button>
         </form>
       </div>
 
       <div>
-        <h1 className="card-city-country">Your Posts:</h1>
+        <h2 className="card-city-country">Your Posts:</h2>
         <div className="post-container">{renderPostsToAccount}</div>
-        <br></br>
         <div className="post-form-container">
           <form onSubmit={handleProfileSubmit}>
-            <h2 className="card-city-country">Update Profile</h2>
-            <br></br>
-            <div className="input-login">
-              <label className="form-label">Username</label>
+            <h2 className="card-city-country">Profile Changes:</h2>
+            <div className="input">
+              <label className="form">Username:</label>
               <br></br>
               <input onChange={handleProfileChange} value={profileUpdates.username} name="username" />
             </div>
-            <div className="input-login">
-              <label className="form-label">Password</label>
+            <br></br>
+            <div className="input">
+              <label className="form">Password:</label>
               <br></br>
               <input onChange={handleProfileChange} value={profileUpdates.password} name="password" />
             </div>
-            <div className="input-login">
-              <label className="form-label">Image</label>
-              <br></br>
-            </div>
-
+            <br></br>
             <button className="login-btn" type="submit">
               Update
             </button>
