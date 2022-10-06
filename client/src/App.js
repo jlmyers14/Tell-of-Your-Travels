@@ -6,7 +6,7 @@ import Country from "./Country";
 import CreateAccount from "./CreateAccount";
 import HeaderNavBar from "./HeaderNavBar";
 import Home from "./Home";
-import LogIn from "./LogIn";
+import Login from "./Login";
 
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -38,7 +38,7 @@ function App() {
             <Home user={user} />
           </Route>
           <Route path="/login">
-            <LogIn setUser={setUser} setIsAuthenticated={setIsAuthenticated} />
+            <Login setUser={setUser} setIsAuthenticated={setIsAuthenticated} />
           </Route>
           <Route path="/country">
             <Country user={user} />

@@ -9,11 +9,11 @@ function Country({ country }) {
 
   // Pull country code from location.state for fetch
   const countryCode = location.state.countryCode;
+  // console.log(countryCode);
 
   const filteredPosts = countryPosts.filter((post) => {
+    console.log(filter)
     switch (filter) {
-      case "lodging":
-        return post.category === "lodging";
       case "food":
         return post.category === "food";
       case "experiences":
@@ -24,8 +24,7 @@ function Country({ country }) {
   });
 
   const renderImages = countryPosts.map((post) => {
-    console.log(post.image);
-    return <img className="images" src={post.image} alt="header_image" />;
+    // return <img className="images" src={post.image} alt="header_image" />;
   });
 
   useEffect(() => {
@@ -36,7 +35,9 @@ function Country({ country }) {
       },
     })
       .then((r) => r.json())
-      .then((obj) => setCountryId(obj[0].id));
+      .then((obj) => {
+        console.log(obj);
+        setCountryId(obj[0].id)});
   }, []);
 
   useEffect(() => {
@@ -56,9 +57,7 @@ function Country({ country }) {
         <div className="post-container">
           <div className="post-card">
             <h2 className="post-user-name">{post.user.username}</h2>
-            <img className="card-user-thumbnail" src={post.user.profile_image} alt="user_profile_photo" />
             <p>{post.content}</p>
-            <img className="travel-image-thumbnail" src={post.image} alt="traveler_photo" />
             <h1 className="card-city-country">
               {post.city}, {post.country.name}
             </h1>
@@ -75,13 +74,7 @@ function Country({ country }) {
       </div>
       <div className="images-container">{renderImages}</div>
       <div className="filter-posts-buttons-container">
-        <button className="filter-btn" onClick={() => setFilter("lodging")} name="lodging">
-          LODGING
-        </button>
-        <button className="filter-btn" onClick={() => setFilter("food")} name="food">
-          FOOD
-        </button>
-        <button className="filter-btn" onClick={() => setFilter("experiences")} name="experiences">
+        <button className="filter-btn" onClick={() => filter === "experiences" ? setFilter("food") : setFilter("experiences")} name="experiences">
           EXPERIENCES
         </button>
       </div>

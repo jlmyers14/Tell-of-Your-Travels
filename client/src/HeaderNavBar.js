@@ -15,14 +15,13 @@ function HeaderNavBar({ user, isAuthenticated, setIsAuthenticated }) {
   return (
     <nav className="nav-container">
       <NavLink exact to="/" style={{ textDecoration: "none" }}>
-        <h1>plannit</h1>
+        <h1>Tell of Your Travels</h1>
       </NavLink>
       {isAuthenticated ? (
         <NavLink to="/account" style={{ textDecoration: "none" }}>
           <h3 style={{ textDecoration: "none" }} className="navbar-username-welcome">
             Hello {user.username}
           </h3>
-          <img className="navbar-image-thumbnail" src={user.profile_image} />
         </NavLink>
       ) : null}
 

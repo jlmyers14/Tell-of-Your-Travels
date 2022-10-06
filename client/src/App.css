@@ -36,3 +36,10 @@
     transform: rotate(360deg);
   }
 }
+
+@media screen and (max-width: 650px) {
+  .Home {
+    background-color: lightgreen;
+    width: 100px;
+  }
+}

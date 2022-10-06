@@ -4,7 +4,6 @@ import { useHistory } from "react-router-dom";
 function CreateAccount({ setUser, setIsAuthenticated }) {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  const [profileImage, setProfileImage] = useState("");
 
   const history = useHistory();
 
@@ -13,7 +12,6 @@ function CreateAccount({ setUser, setIsAuthenticated }) {
     const user = {
       username,
       password,
-      profile_image: profileImage,
     };
 
     fetch("/users", {
@@ -26,6 +24,7 @@ function CreateAccount({ setUser, setIsAuthenticated }) {
       .then((r) => r.json())
       .then(history.push("/login"))
       .then(alert("Successfully created account"));
+      console.log(user)
   }
 
   return (
@@ -40,17 +39,6 @@ function CreateAccount({ setUser, setIsAuthenticated }) {
         <div className="input-login">
           <label>Password</label>
           <input type="password" id="password" value={password} onChange={(e) => setPassword(e.target.value)} name="password" />
-        </div>
-
-        <div className="input-login">
-          <label>Profile Image</label>
-          <input
-            type="profile_image"
-            id="profile_image"
-            value={profileImage}
-            onChange={(e) => setProfileImage(e.target.value)}
-            name="profile_image"
-          />
         </div>
 
         <button className="login-btn" type="submit">

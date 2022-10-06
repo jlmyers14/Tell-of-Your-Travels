@@ -34,14 +34,18 @@ function Home() {
       <Globe
         polygonsData={countries.features.filter((d) => d.properties)}
         backgroundColor={"#FFFFFF"}
-        globeImageUrl="//unpkg.com/three-globe/example/img/earth-blue-marble.jpg"
+        globeImageUrl="//unpkg.com/three-globe/example/img/earth-dark.jpg"
+        hexPolygonsData={countries.features.filter((d) => d.properties)}
+        hexPolygonResolution={3}
+        hexPolygonMargin={0.3}
+        hexPolygonColor={() => `#${Math.round(Math.random() * Math.pow(2, 24)).toString(16).padStart(6, '0')}`}
         atmosphereColor={"#FFFFFF"}
-        polygonAltitude={(d) => (d === hover ? 0.04 : 0.01)}
-        polygonCapColor={(d) => (d === hover ? "#ee81b0d1" : "#fefefe00")}
+        polygonAltitude={(d) => (0.01)}
+        polygonCapColor={(d) => ("#fefefe00")}
         polygonSideColor={() => "rgba(0, 30, 0, 0.15)"}
         polygonStrokeColor={() => "#6f6f6f"}
         polygonsTransitionDuration={300}
-        onPolygonHover={setHover}
+        onHexPolygonHover={setHover}
         onPolygonClick={handleClick}
         polygonLabel={({ properties: d }) => `
         <b>${d.ADMIN}</b>`}

@@ -8,7 +8,6 @@ function Account({ user, setUser }) {
     country_id: "",
     content: "",
     category: null,
-    image: "",
     city: "",
   });
 
@@ -17,7 +16,6 @@ function Account({ user, setUser }) {
   const [profileUpdates, setProfileUpdates] = useState({
     username: "",
     password: "",
-    profile_image: "",
   });
 
   const history = useHistory();
@@ -77,7 +75,6 @@ function Account({ user, setUser }) {
       country_id: "",
       content: "",
       category: null,
-      image: "",
       city: "",
     });
   }
@@ -102,7 +99,6 @@ function Account({ user, setUser }) {
     setProfileUpdates({
       username: "",
       password: "",
-      profile_image: "",
     });
   }
 
@@ -117,9 +113,7 @@ function Account({ user, setUser }) {
           <div className="post-container">
             <div className="account-post-card">
               <h2 className="post-user-name">{user.username}</h2>
-              <img className="card-user-thumbnail" src={user.profile_image} alt="user profile photo" />
               <p>{post.content}</p>
-              <img className="travel-image-thumbnail" src={post.image} alt="traveler photo" />
               <h1 className="card-city-country">
                 {post.city}, {post.country.name}
               </h1>
@@ -154,11 +148,11 @@ function Account({ user, setUser }) {
             <br></br>
             <input onChange={handleChange} value={form.content} name="content" />
           </div>
-          <div className="input-login">
+          {/* <div className="input-login">
             <label className="form-label">Image:</label>
             <br></br>
             <input onChange={handleChange} value={form.image} name="image" />
-          </div>
+          </div> */}
           <div className="input-login">
             <label className="form-label">Nearest city:</label>
             <br></br>
@@ -169,8 +163,6 @@ function Account({ user, setUser }) {
             <br></br>
             <select onChange={handleChange} value={form.category} className="select-country" name="category">
               <option value="null">Select</option>
-              <option value="lodging">Lodging</option>
-              <option value="food">Food</option>
               <option value="experiences">Experiences</option>
             </select>
           </div>
@@ -201,7 +193,6 @@ function Account({ user, setUser }) {
             <div className="input-login">
               <label className="form-label">Image</label>
               <br></br>
-              <input onChange={handleProfileChange} value={profileUpdates.profile_image} name="profile_image" />
             </div>
 
             <button className="login-btn" type="submit">
