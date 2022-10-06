@@ -31,7 +31,6 @@ function Account({ user, setUser }) {
       .then(setPosts);
   }, []);
 
-  // Get all of the countries
   useEffect(() => {
     fetch("/all_countries", {
       method: "GET",

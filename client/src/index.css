@@ -5,6 +5,8 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: lightgoldenrodyellow;
+  color: indigo;
 }
 
 code {
@@ -12,23 +14,9 @@ code {
     monospace;
 }
 
-.navbar {
-  background-color: lightgoldenrodyellow;
-}
-
 .country-header {
-  /* background-color: lightgoldenrodyellow; */
   font-size: 70px;
-  color: indigo;
 }
-
-.post-container {
-  background-color: lightgoldenrodyellow;;
-}
-
-/* .images-container {
-  background-color: lightgoldenrodyellow;
-} */
 
 .post-form-container {
   display: inline-block;
@@ -46,7 +34,6 @@ h2, h3 {
 
 h4 {
   font-size: 30px;
-  color: indigo
 }
 
 button {
@@ -59,5 +46,34 @@ p {
   margin-right: 200px;
   font-weight: bold;
   font-size: 20px;
-  color: indigo;
 }
+
+/* .post-container {
+  float: right;
+} */
+
+.post-form-container {
+  float: left;
+  margin-left: 50px;
+}
+
+.card-edit-btn {
+  box-shadow: 0 6px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.filter-btn {
+  box-shadow: 0 6px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.login-btn {
+  box-shadow: 0 6px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.login-nav-btn {
+  box-shadow: 0 6px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.navbar {
+  border-bottom: 4px solid;
+}
+

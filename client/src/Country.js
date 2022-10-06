@@ -7,7 +7,6 @@ function Country({ country }) {
   const [filter, setFilter] = useState("");
   const [countryId, setCountryId] = useState();
 
-  // Pull country code from location.state for fetch
   const countryCode = location.state.countryCode;
   // console.log(countryCode);
 
